@@ -15,9 +15,5 @@ router.post('/signin',signInController);
 router.post('/send-otp',verifyEmailController);
 router.get('/verify-otp/:id',verifyOTPController);
 router.put('/reset-password/:id',resetPasswordController);
-router.get('/test',isAuthenticate,(req,res)=>{
-    console.log(req.user)
-    res.json("access the route")
-})
 
 module.exports = router

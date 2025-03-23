@@ -11,17 +11,20 @@ const {
 } = require("../controller/file/FavouriteFileController");
 const { fileListController } = require("../controller/file/FileListController");
 const { privateFileController } = require("../controller/file/privateFileController");
+const { addFolderController } = require("../controller/file/addFolderController");
+
 
 const router = express.Router();
 
-router.post("/add/:userId", upload.single("file"), addFileController);
-router.post("/copy/:fileId", copyFileController);
-router.post("/duplicate/:fileId", duplicateFileController);
-router.put("/rename/:fileId", renameFileController);
-router.delete("/delete/:fileId", deleteFileController);
-router.put("/favourite/:fileId", addOrRemoveFavouriteController);
+router.post("/create-file/:userId", upload.single("file"), addFileController);
+router.post('/create-folder/:userId',addFolderController);
+router.post("/copy-file/:fileId", copyFileController);
+router.post("/duplicate-file/:fileId", duplicateFileController);
+router.put("/rename-file/:fileId", renameFileController);
+router.delete("/delete-file/:fileId", deleteFileController);
+router.put("/add-or-remove-favourite/:fileId", addOrRemoveFavouriteController);
 router.get("/favourites/:userId", favouriteListController);
-router.get("/list/:userId", fileListController);
+router.get("/filelist/:userId", fileListController);
 router.post("/private-file/:userId", privateFileController);
 
 module.exports = router;

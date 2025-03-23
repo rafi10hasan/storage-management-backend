@@ -6,6 +6,6 @@ const { calendarDateController } = require('../controller/summary/calendarDateCo
 const router = express.Router();
 
 router.get("/summary/:userId",summaryController)
-router.get("/recent/files/:userId",recentFilesController)
+router.get("/recent-files/:userId",recentFilesController)
 router.get("/calendar/files/:userId",calendarDateController)
 module.exports = router

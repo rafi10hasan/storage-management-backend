@@ -8,7 +8,7 @@ const connectDB = require('../database/database.config');
 const authRoute = require('../routes/authRoute')
 const fileRoute = require('../routes/fileRoute')
 const profileRoute = require('../routes/profileRoute')
-const folderRoute = require('../routes/folderRoute')
+
 const summaryRoute = require('../routes/summaryRoute')
 const { globalErrorHandler } = require('./error');
 connectDB()
@@ -16,10 +16,9 @@ connectDB()
 app.use(middleware)
 app.use(route);
 
-app.use('/auth',authRoute);
-app.use('/file/v1',fileRoute)
-app.use('/folder/v1',folderRoute)
-app.use('/api/dashboard',summaryRoute)
-app.use('/api/profile',profileRoute)
+app.use('/api/v1/auth',authRoute);
+app.use('/api/v1',fileRoute)
+app.use('/api/v1/dashboard',summaryRoute)
+app.use('/api/v1/profile',profileRoute)
 app.use(globalErrorHandler)
 module.exports = app
