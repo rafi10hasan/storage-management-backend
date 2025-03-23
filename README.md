@@ -10,6 +10,6 @@
 
 `SECRET_TOKEN` = your_token_secret
 
-TOKEN_EXPIRED_IN = your_token_expired_in
+`TOKEN_EXPIRED_IN` = your_token_expired_in
 
-NODE_ENV = development
+`NODE_ENV` = development
